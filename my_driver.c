@@ -8,8 +8,8 @@
 #define buffer_length 1024
 static char kernal_buffer[buffer_length];
 
-//int open_count = 0;
-//int release_count = 0;
+int open_count = 0;
+int release_count = 0;
 
 
 ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset)
@@ -17,10 +17,11 @@ ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset
 
 	int to_read;
 	int ctu;
+	int result;
 
 	if (buffer_length > count)
 			to_read = count;
-	elseint ctu
+	else
 			to_read = count;
 
 	//copy_to_user
@@ -32,7 +33,7 @@ ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset
 	//errno =
 
 	//number of
-	int result = to_read - ctu;
+	result = to_read - ctu;
 
 	printk(KERN_ALERT "Device has read %d bytes\n",result);
 	return result;
@@ -44,6 +45,7 @@ ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t 
 
 	int to_write;
 	int cfu;
+	int result;
 
 	if (buffer_length > count)
 			to_write = count;
@@ -59,7 +61,7 @@ ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t 
 	//errno =
 
 	//number of
-	int result = to_write - cfu;
+	result = to_write - cfu;
 
 	printk(KERN_ALERT "Device has written %d bytes\n",result);
 	return result;
@@ -68,7 +70,7 @@ ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t 
 
 int my_open(struct inode *pinode, struct file *my_file)
 {	
-	int open_count;
+	//int open_count;
 	printk(KERN_ALERT "Opening simple_character_device\n");
 	open_count++;
 	printk(KERN_ALERT "Device has been opened %d times\n",open_count);
@@ -78,7 +80,7 @@ int my_open(struct inode *pinode, struct file *my_file)
 
 int my_release(struct inode *pinode, struct file *my_file)
 {	
-	int release_count;
+	//int release_count;
 	printk(KERN_ALERT "Releasing simple_character_device\n");
 	release_count++;
 	printk(KERN_ALERT "Device has been released %d times\n",release_count);
