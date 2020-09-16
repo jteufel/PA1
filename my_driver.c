@@ -24,6 +24,7 @@ ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset
 
 	//error if bytes aren't transferred?
 	//if(ctu != 0) return -1;
+	//errno =
 
 	//number of
 	int result = to_read - ctu;
@@ -33,12 +34,33 @@ ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset
 
 };
 
-ssize_t my_write(struct file *my_file, char *buffer, size_t size, loff_t *offset)
+ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t *offset)
 {
+
+	int to_write;
+
+	if (buffer_length > count)
+			to_write = count;
+	else
+			buffer_length = count;
+
+	//copy_from_user
+	//The function returns zero on success or non-zero to indicate the number of bytes that weren'ttransferred.
+	int cfu = copy_from_user(kernal_buffer, buffer, to_write);
+
+	//error if bytes aren't transferred?
+	//if(ctu != 0) return -1;
+	//errno =
+
+	//number of
+	int result = to_write - cfu;
+
+	printk(KERN_ALERT "Device has read %d bytes\n",result);
+	return result;
 
 };
 
-int my_open(void)
+int my_open(struct inode *pinode, struct file *my_file)
 {
 	printk(KERN_ALERT "Opening simple_character_device\n");
 	open_count++
@@ -47,7 +69,7 @@ int my_open(void)
 	return 0;
 };
 
-int my_release(void)
+int my_release(struct inode *pinode, struct file *my_file)
 {
 	printk(KERN_ALERT "Releasing simple_character_device\n");
 	release_count++
@@ -63,7 +85,7 @@ static struct file_operations my_device_operations = {
 	.open = my_open,
 	.release = my_release,
 	.read = my_read,
-	.write = my_write,
+	.write = my_write
 
 };
 
