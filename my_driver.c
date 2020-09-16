@@ -1,11 +1,8 @@
-
-
 #include<linux/init.h>
 #include<linux/module.h>
 #include<linux/fs.h>
 #include<linux/uaccess.h>
-#include <sys/types.h>
-#include <unistd.h>
+#include<linux/unistd.h>
 
 #define buffer_length 1024
 #define maj 240
