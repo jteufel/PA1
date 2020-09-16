@@ -16,7 +16,12 @@ int release_count = 0;
 ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset)
 {
 
-	int to_read = count
+	int to_read;
+
+	if (buffer_length > count)
+			to_read = count;
+	else
+			to_read = count;
 
 	//copy_to_user
 	//The function returns zero on success or non-zero to indicate the number of bytes that weren'ttransferred.
@@ -55,7 +60,7 @@ ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t 
 	//number of
 	int result = to_write - cfu;
 
-	printk(KERN_ALERT "Device has read %d bytes\n",result);
+	printk(KERN_ALERT "Device has written %d bytes\n",result);
 	return result;
 
 };
@@ -63,7 +68,7 @@ ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t 
 int my_open(struct inode *pinode, struct file *my_file)
 {
 	printk(KERN_ALERT "Opening simple_character_device\n");
-	open_count++
+	open_count++;
 	printk(KERN_ALERT "Device has been opened %d times\n",open_count);
 
 	return 0;
@@ -72,7 +77,7 @@ int my_open(struct inode *pinode, struct file *my_file)
 int my_release(struct inode *pinode, struct file *my_file)
 {
 	printk(KERN_ALERT "Releasing simple_character_device\n");
-	release_count++
+	release_count++;
 	printk(KERN_ALERT "Device has been released %d times\n",release_count);
 
 	return 0;
@@ -92,15 +97,14 @@ static struct file_operations my_device_operations = {
 int my_driver_init(void)
 {
 	printk(KERN_ALERT "inside %s function\n",__FUNCTION__);
-	register_chrdev(240,"simple_character_device", &file_operations)
-	return 0;
+	register_chrdev(240,"simple_character_device", &file_operations);
 };
 
 
 int my_driver_exit(void)
 {
 	printk(KERN_ALERT "inside %s function\n",__FUNCTION__);
-	unregister_chrdev(240,"simple_character_device")
+	unregister_chrdev(240,"simple_character_device");
 	return 0;
 };
 
