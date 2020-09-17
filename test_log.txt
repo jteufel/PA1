@@ -1,0 +1,10 @@
+Now testing simple_character_device
+First Testing Read
+Read output: helloworld
+Write helloworld@ to device: 
+Read again
+Read output: helloworld
+Testing llseek with SEEK_SET
+llseek output: 20
+Testing llseek with SEEK_CUR
+llseek output: 40
