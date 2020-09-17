@@ -22,6 +22,10 @@ printf("Read again\n");
 read(my_device, kernal_buffer, BUFFER);
 printf("Read output: %s\n", kernal_buffer);
 
+printf("Testing llseek with SEEK_SET\n");
+int set = llseek(my_device, 20, SEEK_SET);
+printf("llseek output: %s\n", set);
+
 close(my_device);
 
 return 0;
