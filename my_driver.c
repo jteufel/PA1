@@ -4,9 +4,9 @@
 #include<linux/uaccess.h>
 #include<linux/unistd.h>
 
-#define buffer_length 1024
-#define maj 240
-static char kernal_buffer[buffer_length];
+#define BUFFER 1024
+#define MAJOR 240
+static char kernal_buffer[BUFFER];
 
 int open_count = 0;
 loff_t *file_pointer_location;
@@ -19,10 +19,10 @@ ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset
 	int ctu;
 	int result;
 
-	if (buffer_length > count)
+	if (BUFFER > count)
 			to_read = count;
 	else
-			to_read = buffer_length;
+			to_read = BUFFER;
 
 	//copy_to_user
 	//The function returns zero on success or non-zero to indicate the number of bytes that weren'ttransferred.
@@ -43,10 +43,10 @@ ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t 
 	int cfu;
 	int result;
 
-	if (buffer_length > count)
+	if (BUFFER > count)
 			to_write = count;
 	else
-			to_write = buffer_length;
+			to_write = BUFFER;
 
 	//copy_from_user
 	//The function returns zero on success or non-zero to indicate the number of bytes that weren'ttransferred.
@@ -69,8 +69,8 @@ loff_t my_llseek(struct file *my_file, loff_t offset, int whence)
 		case SEEK_CUR:
 			*file_pointer_location = offset + *file_pointer_location;
 		case SEEK_END:
-			*file_pointer_location = buffer_length - offset;
-	
+			*file_pointer_location = BUFFER - offset;
+
 	};
 
 	return *file_pointer_location;
@@ -115,7 +115,7 @@ static struct file_operations my_device_operations = {
 int my_driver_init(void)
 {
 	printk(KERN_ALERT "inside %s function\n",__FUNCTION__);
-	register_chrdev(maj,"simple_character_device", &my_device_operations);
+	register_chrdev(MAJOR,"simple_character_device", &my_device_operations);
 	return 0;
 };
 
@@ -123,7 +123,7 @@ int my_driver_init(void)
 void my_driver_exit(void)
 {
 	printk(KERN_ALERT "inside %s function\n",__FUNCTION__);
-	unregister_chrdev(maj,"simple_character_device");
+	unregister_chrdev(MAJOR,"simple_character_device");
 };
 
 
