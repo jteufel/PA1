@@ -25,7 +25,7 @@ ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset
 			to_read = BUFFER;
 
 	//copy_to_user
-	//The function returns zero on success or non-zero to indicate the number of bytes that weren'ttransferred.
+	//The function returns zero on success or non-zero to indicate the number of bytes that weren't transferred.
 	ctu = copy_to_user(buffer, kernal_buffer, to_read);
 
 	result = to_read - ctu;

@@ -8,17 +8,21 @@ static char kernal_buffer[BUFFER];
 
 int main()
 {
+int my_device = open("/dev/simple_character_device", O_RDWR);
+printf("Now testing simple_character_device\n");
+printf("First Testing Read\n");
+read(my_device, kernal_buffer, BUFFER);
+printf("Read output: %s\n", kernal_buffer);
 
-	int my_device = open("/dev/simple_character_device", O_RDWR);
+char to_write[10] = {'h','e','l','l','o','w','o','r','l','d'};
+printf("Write %s to device: %s\n", to_write);
+write(file, to_write, 10)
 
-	printf("Now testing simple_character_device\n");
+printf("Read again\n");
+read(my_device, kernal_buffer, BUFFER);
+printf("Read output: %s\n", kernal_buffer);
 
-  	printf("First Testing Read\n");
+close(my_device);
 
-  	read(my_device, kernal_buffer, BUFFER);
-
-  	printf("Read output: %s\n", kernal_buffer);
-
-  	return 0;
-
+return 0;
 }
