@@ -16,7 +16,7 @@ printf("Read output: %s\n", kernal_buffer);
 
 char to_write[10] = {'h','e','l','l','o','w','o','r','l','d'};
 printf("Write %s to device: %s\n", to_write);
-write(file, to_write, 10)
+write(my_device, to_write, 10);
 
 printf("Read again\n");
 read(my_device, kernal_buffer, BUFFER);
