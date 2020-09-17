@@ -62,17 +62,22 @@ ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t 
 
 loff_t my_llseek(struct file *my_file, loff_t offset, int whence)
 {
-
+	
+	printk(KERN_ALERT "In llseek\n");
 	switch (whence) {
 		case SEEK_SET:
+			printk(KERN_ALERT "SEEK_SET\n");
 			file_pointer_location = offset;
 		case SEEK_CUR:
+			printk(KERN_ALERT "SEEK_CUR\n");
 			file_pointer_location = offset + file_pointer_location;
 		case SEEK_END:
+			printk(KERN_ALERT "SEEK_END\n");
 			file_pointer_location = BUFFER - offset;
 
 	};
-
+	
+	printk(KERN_ALERT "llseek returning %d",file_pointer_location);
 	return file_pointer_location;
 };
 

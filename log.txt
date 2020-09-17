@@ -15491,3 +15491,158 @@ Sep 16 20:53:52 cu-cs-vm kernel: [246604.776556] Opening simple_character_device
 Sep 16 20:53:52 cu-cs-vm kernel: [246604.776561] Device has been opened 2 times
 Sep 16 20:53:52 cu-cs-vm kernel: [246604.776660] Device has read 1024 bytes
 Sep 16 20:53:52 cu-cs-vm kernel: [246604.776714] Releasing simple_character_device
+Sep 16 21:00:10 cu-cs-vm dhclient[60644]: DHCPREQUEST of 172.16.33.129 on ens33 to 172.16.33.254 port 67 (xid=0x36dba3da)
+Sep 16 21:00:10 cu-cs-vm dhclient[60644]: DHCPACK of 172.16.33.129 from 172.16.33.254
+Sep 16 21:00:10 cu-cs-vm NetworkManager[783]: <info>  [1600311610.8788]   address 172.16.33.129
+Sep 16 21:00:10 cu-cs-vm NetworkManager[783]: <info>  [1600311610.8800]   plen 24 (255.255.255.0)
+Sep 16 21:00:10 cu-cs-vm NetworkManager[783]: <info>  [1600311610.8801]   gateway 172.16.33.2
+Sep 16 21:00:10 cu-cs-vm NetworkManager[783]: <info>  [1600311610.8801]   server identifier 172.16.33.254
+Sep 16 21:00:10 cu-cs-vm NetworkManager[783]: <info>  [1600311610.8801]   lease time 1800
+Sep 16 21:00:10 cu-cs-vm NetworkManager[783]: <info>  [1600311610.8801]   nameserver '172.16.33.2'
+Sep 16 21:00:10 cu-cs-vm NetworkManager[783]: <info>  [1600311610.8802]   domain name 'localdomain'
+Sep 16 21:00:10 cu-cs-vm NetworkManager[783]: <info>  [1600311610.8802]   wins '172.16.33.2'
+Sep 16 21:00:10 cu-cs-vm NetworkManager[783]: <info>  [1600311610.8802] dhcp4 (ens33): state changed bound -> bound
+Sep 16 21:00:10 cu-cs-vm dbus[770]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Sep 16 21:00:10 cu-cs-vm systemd[1]: Starting Network Manager Script Dispatcher Service...
+Sep 16 21:00:10 cu-cs-vm dhclient[60644]: bound to 172.16.33.129 -- renewal in 719 seconds.
+Sep 16 21:00:10 cu-cs-vm dbus[770]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Sep 16 21:00:10 cu-cs-vm systemd[1]: Started Network Manager Script Dispatcher Service.
+Sep 16 21:00:10 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: new request (1 scripts)
+Sep 16 21:00:10 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: start running ordered scripts...
+Sep 16 21:12:09 cu-cs-vm dhclient[60644]: DHCPREQUEST of 172.16.33.129 on ens33 to 172.16.33.254 port 67 (xid=0x36dba3da)
+Sep 16 21:12:09 cu-cs-vm dhclient[60644]: DHCPACK of 172.16.33.129 from 172.16.33.254
+Sep 16 21:12:09 cu-cs-vm NetworkManager[783]: <info>  [1600312329.1379]   address 172.16.33.129
+Sep 16 21:12:09 cu-cs-vm NetworkManager[783]: <info>  [1600312329.1379]   plen 24 (255.255.255.0)
+Sep 16 21:12:09 cu-cs-vm NetworkManager[783]: <info>  [1600312329.1380]   gateway 172.16.33.2
+Sep 16 21:12:09 cu-cs-vm NetworkManager[783]: <info>  [1600312329.1380]   server identifier 172.16.33.254
+Sep 16 21:12:09 cu-cs-vm NetworkManager[783]: <info>  [1600312329.1380]   lease time 1800
+Sep 16 21:12:09 cu-cs-vm dbus[770]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Sep 16 21:12:09 cu-cs-vm NetworkManager[783]: <info>  [1600312329.1380]   nameserver '172.16.33.2'
+Sep 16 21:12:09 cu-cs-vm NetworkManager[783]: <info>  [1600312329.1380]   domain name 'localdomain'
+Sep 16 21:12:09 cu-cs-vm NetworkManager[783]: <info>  [1600312329.1380]   wins '172.16.33.2'
+Sep 16 21:12:09 cu-cs-vm NetworkManager[783]: <info>  [1600312329.1380] dhcp4 (ens33): state changed bound -> bound
+Sep 16 21:12:09 cu-cs-vm systemd[1]: Starting Network Manager Script Dispatcher Service...
+Sep 16 21:12:09 cu-cs-vm dhclient[60644]: bound to 172.16.33.129 -- renewal in 800 seconds.
+Sep 16 21:12:09 cu-cs-vm dbus[770]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Sep 16 21:12:09 cu-cs-vm systemd[1]: Started Network Manager Script Dispatcher Service.
+Sep 16 21:12:09 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: new request (1 scripts)
+Sep 16 21:12:09 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: start running ordered scripts...
+Sep 16 21:17:01 cu-cs-vm CRON[70382]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Sep 16 21:22:58 cu-cs-vm kernel: [248350.651930] Opening simple_character_device
+Sep 16 21:22:58 cu-cs-vm kernel: [248350.651934] Device has been opened 3 times
+Sep 16 21:22:58 cu-cs-vm kernel: [248350.651996] Device has read 1024 bytes
+Sep 16 21:22:58 cu-cs-vm kernel: [248350.652005] Device has written 10 bytes
+Sep 16 21:22:58 cu-cs-vm kernel: [248350.652007] Device has read 1024 bytes
+Sep 16 21:22:58 cu-cs-vm kernel: [248350.652010] Releasing simple_character_device
+Sep 16 21:25:29 cu-cs-vm dhclient[60644]: DHCPREQUEST of 172.16.33.129 on ens33 to 172.16.33.254 port 67 (xid=0x36dba3da)
+Sep 16 21:25:29 cu-cs-vm dhclient[60644]: DHCPACK of 172.16.33.129 from 172.16.33.254
+Sep 16 21:25:29 cu-cs-vm NetworkManager[783]: <info>  [1600313129.5309]   address 172.16.33.129
+Sep 16 21:25:29 cu-cs-vm NetworkManager[783]: <info>  [1600313129.5314]   plen 24 (255.255.255.0)
+Sep 16 21:25:29 cu-cs-vm NetworkManager[783]: <info>  [1600313129.5314]   gateway 172.16.33.2
+Sep 16 21:25:29 cu-cs-vm NetworkManager[783]: <info>  [1600313129.5314]   server identifier 172.16.33.254
+Sep 16 21:25:29 cu-cs-vm NetworkManager[783]: <info>  [1600313129.5314]   lease time 1800
+Sep 16 21:25:29 cu-cs-vm NetworkManager[783]: <info>  [1600313129.5314]   nameserver '172.16.33.2'
+Sep 16 21:25:29 cu-cs-vm NetworkManager[783]: <info>  [1600313129.5314]   domain name 'localdomain'
+Sep 16 21:25:29 cu-cs-vm NetworkManager[783]: <info>  [1600313129.5314]   wins '172.16.33.2'
+Sep 16 21:25:29 cu-cs-vm NetworkManager[783]: <info>  [1600313129.5315] dhcp4 (ens33): state changed bound -> bound
+Sep 16 21:25:29 cu-cs-vm dbus[770]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Sep 16 21:25:29 cu-cs-vm systemd[1]: Starting Network Manager Script Dispatcher Service...
+Sep 16 21:25:29 cu-cs-vm dhclient[60644]: bound to 172.16.33.129 -- renewal in 889 seconds.
+Sep 16 21:25:29 cu-cs-vm dbus[770]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Sep 16 21:25:29 cu-cs-vm systemd[1]: Started Network Manager Script Dispatcher Service.
+Sep 16 21:25:29 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: new request (1 scripts)
+Sep 16 21:25:29 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: start running ordered scripts...
+Sep 16 21:34:32 cu-cs-vm kernel: [249045.001643] Opening simple_character_device
+Sep 16 21:34:32 cu-cs-vm kernel: [249045.001648] Device has been opened 4 times
+Sep 16 21:34:32 cu-cs-vm kernel: [249045.001702] Device has read 1024 bytes
+Sep 16 21:34:32 cu-cs-vm kernel: [249045.001716] Device has written 10 bytes
+Sep 16 21:34:32 cu-cs-vm kernel: [249045.001719] Device has read 1024 bytes
+Sep 16 21:34:32 cu-cs-vm kernel: [249045.003825] show_signal_msg: 9 callbacks suppressed
+Sep 16 21:34:32 cu-cs-vm kernel: [249045.003944] my_driver_test[70543]: segfault at 3ec ip 00007f2e670fdcd0 sp 00007ffc4052b570 error 4 in libc-2.23.so[7f2e670af000+1c0000]
+Sep 16 21:34:33 cu-cs-vm kernel: [249045.419469] Releasing simple_character_device
+Sep 16 21:40:18 cu-cs-vm dhclient[60644]: DHCPREQUEST of 172.16.33.129 on ens33 to 172.16.33.254 port 67 (xid=0x36dba3da)
+Sep 16 21:40:18 cu-cs-vm dhclient[60644]: DHCPACK of 172.16.33.129 from 172.16.33.254
+Sep 16 21:40:18 cu-cs-vm NetworkManager[783]: <info>  [1600314018.5396]   address 172.16.33.129
+Sep 16 21:40:18 cu-cs-vm NetworkManager[783]: <info>  [1600314018.5400]   plen 24 (255.255.255.0)
+Sep 16 21:40:18 cu-cs-vm NetworkManager[783]: <info>  [1600314018.5402]   gateway 172.16.33.2
+Sep 16 21:40:18 cu-cs-vm NetworkManager[783]: <info>  [1600314018.5409]   server identifier 172.16.33.254
+Sep 16 21:40:18 cu-cs-vm NetworkManager[783]: <info>  [1600314018.5409]   lease time 1800
+Sep 16 21:40:18 cu-cs-vm NetworkManager[783]: <info>  [1600314018.5410]   nameserver '172.16.33.2'
+Sep 16 21:40:18 cu-cs-vm NetworkManager[783]: <info>  [1600314018.5410]   domain name 'localdomain'
+Sep 16 21:40:18 cu-cs-vm NetworkManager[783]: <info>  [1600314018.5410]   wins '172.16.33.2'
+Sep 16 21:40:18 cu-cs-vm NetworkManager[783]: <info>  [1600314018.5410] dhcp4 (ens33): state changed bound -> bound
+Sep 16 21:40:18 cu-cs-vm dbus[770]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Sep 16 21:40:18 cu-cs-vm systemd[1]: Starting Network Manager Script Dispatcher Service...
+Sep 16 21:40:18 cu-cs-vm dhclient[60644]: bound to 172.16.33.129 -- renewal in 803 seconds.
+Sep 16 21:40:18 cu-cs-vm dbus[770]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Sep 16 21:40:18 cu-cs-vm systemd[1]: Started Network Manager Script Dispatcher Service.
+Sep 16 21:40:18 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: new request (1 scripts)
+Sep 16 21:40:18 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: start running ordered scripts...
+Sep 16 21:45:29 cu-cs-vm kernel: [249701.663180] inside my_driver_exit function
+Sep 16 21:47:27 cu-cs-vm kernel: [249819.938424] inside my_driver_init function
+Sep 16 21:47:56 cu-cs-vm kernel: [249848.414747] Opening simple_character_device
+Sep 16 21:47:56 cu-cs-vm kernel: [249848.414751] Device has been opened 1 times
+Sep 16 21:47:56 cu-cs-vm kernel: [249848.414798] Device has read 1024 bytes
+Sep 16 21:47:56 cu-cs-vm kernel: [249848.414811] Device has written 10 bytes
+Sep 16 21:47:56 cu-cs-vm kernel: [249848.414814] Device has read 1024 bytes
+Sep 16 21:47:56 cu-cs-vm kernel: [249848.414821] my_driver_test[70824]: segfault at 3ec ip 00007fb95d98acd0 sp 00007ffc2b813970 error 4 in libc-2.23.so[7fb95d93c000+1c0000]
+Sep 16 21:47:56 cu-cs-vm kernel: [249848.546446] Releasing simple_character_device
+Sep 16 21:53:41 cu-cs-vm dhclient[60644]: DHCPREQUEST of 172.16.33.129 on ens33 to 172.16.33.254 port 67 (xid=0x36dba3da)
+Sep 16 21:53:41 cu-cs-vm dhclient[60644]: DHCPACK of 172.16.33.129 from 172.16.33.254
+Sep 16 21:53:41 cu-cs-vm NetworkManager[783]: <info>  [1600314821.6262]   address 172.16.33.129
+Sep 16 21:53:41 cu-cs-vm NetworkManager[783]: <info>  [1600314821.6263]   plen 24 (255.255.255.0)
+Sep 16 21:53:41 cu-cs-vm NetworkManager[783]: <info>  [1600314821.6263]   gateway 172.16.33.2
+Sep 16 21:53:41 cu-cs-vm NetworkManager[783]: <info>  [1600314821.6263]   server identifier 172.16.33.254
+Sep 16 21:53:41 cu-cs-vm NetworkManager[783]: <info>  [1600314821.6263]   lease time 1800
+Sep 16 21:53:41 cu-cs-vm NetworkManager[783]: <info>  [1600314821.6263]   nameserver '172.16.33.2'
+Sep 16 21:53:41 cu-cs-vm NetworkManager[783]: <info>  [1600314821.6263]   domain name 'localdomain'
+Sep 16 21:53:41 cu-cs-vm NetworkManager[783]: <info>  [1600314821.6263]   wins '172.16.33.2'
+Sep 16 21:53:41 cu-cs-vm NetworkManager[783]: <info>  [1600314821.6263] dhcp4 (ens33): state changed bound -> bound
+Sep 16 21:53:41 cu-cs-vm dbus[770]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Sep 16 21:53:41 cu-cs-vm systemd[1]: Starting Network Manager Script Dispatcher Service...
+Sep 16 21:53:41 cu-cs-vm dhclient[60644]: bound to 172.16.33.129 -- renewal in 717 seconds.
+Sep 16 21:53:41 cu-cs-vm dbus[770]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Sep 16 21:53:41 cu-cs-vm systemd[1]: Started Network Manager Script Dispatcher Service.
+Sep 16 21:53:41 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: new request (1 scripts)
+Sep 16 21:53:41 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: start running ordered scripts...
+Sep 16 22:01:33 cu-cs-vm kernel: [250665.974315] inside my_driver_exit function
+Sep 16 22:01:49 cu-cs-vm kernel: [250681.900086] inside my_driver_init function
+Sep 16 22:02:13 cu-cs-vm kernel: [250705.986317] Opening simple_character_device
+Sep 16 22:02:13 cu-cs-vm kernel: [250705.986321] Device has been opened 1 times
+Sep 16 22:02:13 cu-cs-vm kernel: [250705.986375] Device has read 1024 bytes
+Sep 16 22:02:13 cu-cs-vm kernel: [250705.986386] Device has written 10 bytes
+Sep 16 22:02:13 cu-cs-vm kernel: [250705.986389] Device has read 1024 bytes
+Sep 16 22:02:13 cu-cs-vm kernel: [250705.986398] my_driver_test[71098]: segfault at 3ec ip 00007f8b97af3cd0 sp 00007ffc5a8ebd90 error 4 in libc-2.23.so[7f8b97aa5000+1c0000]
+Sep 16 22:02:13 cu-cs-vm kernel: [250706.118735] Releasing simple_character_device
+Sep 16 22:05:38 cu-cs-vm dhclient[60644]: DHCPREQUEST of 172.16.33.129 on ens33 to 172.16.33.254 port 67 (xid=0x36dba3da)
+Sep 16 22:05:38 cu-cs-vm dhclient[60644]: DHCPACK of 172.16.33.129 from 172.16.33.254
+Sep 16 22:05:38 cu-cs-vm NetworkManager[783]: <info>  [1600315538.9261]   address 172.16.33.129
+Sep 16 22:05:38 cu-cs-vm NetworkManager[783]: <info>  [1600315538.9261]   plen 24 (255.255.255.0)
+Sep 16 22:05:38 cu-cs-vm NetworkManager[783]: <info>  [1600315538.9261]   gateway 172.16.33.2
+Sep 16 22:05:38 cu-cs-vm NetworkManager[783]: <info>  [1600315538.9261]   server identifier 172.16.33.254
+Sep 16 22:05:38 cu-cs-vm NetworkManager[783]: <info>  [1600315538.9261]   lease time 1800
+Sep 16 22:05:38 cu-cs-vm NetworkManager[783]: <info>  [1600315538.9261]   nameserver '172.16.33.2'
+Sep 16 22:05:38 cu-cs-vm NetworkManager[783]: <info>  [1600315538.9262]   domain name 'localdomain'
+Sep 16 22:05:38 cu-cs-vm NetworkManager[783]: <info>  [1600315538.9262]   wins '172.16.33.2'
+Sep 16 22:05:38 cu-cs-vm NetworkManager[783]: <info>  [1600315538.9263] dhcp4 (ens33): state changed bound -> bound
+Sep 16 22:05:38 cu-cs-vm dbus[770]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Sep 16 22:05:38 cu-cs-vm systemd[1]: Starting Network Manager Script Dispatcher Service...
+Sep 16 22:05:38 cu-cs-vm dhclient[60644]: bound to 172.16.33.129 -- renewal in 814 seconds.
+Sep 16 22:05:38 cu-cs-vm dbus[770]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Sep 16 22:05:38 cu-cs-vm systemd[1]: Started Network Manager Script Dispatcher Service.
+Sep 16 22:05:38 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: new request (1 scripts)
+Sep 16 22:05:38 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: start running ordered scripts...
+Sep 16 22:07:12 cu-cs-vm kernel: [251004.415214] inside my_driver_exit function
+Sep 16 22:07:52 cu-cs-vm kernel: [251045.091575] inside my_driver_init function
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630230] Opening simple_character_device
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630234] Device has been opened 1 times
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630342] Device has read 1024 bytes
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630360] Device has written 10 bytes
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630364] Device has read 1024 bytes
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630371] In llseek
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630371] SEEK_SET
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630372] SEEK_CUR
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630373] SEEK_END
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630374] llseek returning
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.630381] my_driver_test[71300]: segfault at 3ec ip 00007f37c59e8cd0 sp 00007ffe035e6db0 error 4 in libc-2.23.so[7f37c599a000+1c0000]
+Sep 16 22:08:16 cu-cs-vm kernel: [251068.767111] Releasing simple_character_device

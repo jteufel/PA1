@@ -26,11 +26,11 @@ loff_t seek_off = 20;
 
 printf("Testing llseek with SEEK_SET\n");
 loff_t set = llseek(my_device, seek_off, SEEK_SET);
-printf("llseek output: %s\n", set);
+printf("llseek output: %d\n", set);
 
 printf("Testing llseek with SEEK_CUR\n");
 loff_t cur = llseek(my_device, seek_off, SEEK_CUR);
-printf("llseek output: %s\n", cur);
+printf("llseek output: %d\n", cur);
 
 close(my_device);
 
