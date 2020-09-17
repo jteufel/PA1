@@ -9,7 +9,7 @@
 static char kernal_buffer[BUFFER];
 
 int open_count = 0;
-loff_t *file_pointer_location;
+loff_t file_pointer_location;
 
 
 ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset)
@@ -65,15 +65,15 @@ loff_t my_llseek(struct file *my_file, loff_t offset, int whence)
 
 	switch (whence) {
 		case SEEK_SET:
-			*file_pointer_location = offset;
+			file_pointer_location = offset;
 		case SEEK_CUR:
-			*file_pointer_location = offset + *file_pointer_location;
+			file_pointer_location = offset + file_pointer_location;
 		case SEEK_END:
-			*file_pointer_location = BUFFER - offset;
+			file_pointer_location = BUFFER - offset;
 
 	};
 
-	return *file_pointer_location;
+	return file_pointer_location;
 };
 
 int my_open(struct inode *pinode, struct file *my_file)
@@ -83,9 +83,7 @@ int my_open(struct inode *pinode, struct file *my_file)
 	printk(KERN_ALERT "Opening simple_character_device\n");
 
 	open_count++;
-
-	starting_loc = 0;
-	file_pointer_location = &starting_loc;
+	file_pointer_location = 0;
 
 	printk(KERN_ALERT "Device has been opened %d times\n",open_count);
 
