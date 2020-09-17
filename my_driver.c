@@ -68,12 +68,15 @@ loff_t my_llseek(struct file *my_file, loff_t offset, int whence)
 		case SEEK_SET:
 			printk(KERN_ALERT "SEEK_SET\n");
 			file_pointer_location = offset;
+			break;
 		case SEEK_CUR:
 			printk(KERN_ALERT "SEEK_CUR\n");
 			file_pointer_location = offset + file_pointer_location;
+			break;
 		case SEEK_END:
 			printk(KERN_ALERT "SEEK_END\n");
 			file_pointer_location = BUFFER - offset;
+			break;
 
 	};
 	

@@ -15646,3 +15646,78 @@ Sep 16 22:08:16 cu-cs-vm kernel: [251068.630373] SEEK_END
 Sep 16 22:08:16 cu-cs-vm kernel: [251068.630374] llseek returning
 Sep 16 22:08:16 cu-cs-vm kernel: [251068.630381] my_driver_test[71300]: segfault at 3ec ip 00007f37c59e8cd0 sp 00007ffe035e6db0 error 4 in libc-2.23.so[7f37c599a000+1c0000]
 Sep 16 22:08:16 cu-cs-vm kernel: [251068.767111] Releasing simple_character_device
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766528] Opening simple_character_device
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766532] Device has been opened 2 times
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766585] Device has read 1024 bytes
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766595] Device has written 10 bytes
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766598] Device has read 1024 bytes
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766603] In llseek
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766604] SEEK_SET
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766604] SEEK_CUR
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766605] SEEK_END
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766606] llseek returning
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.766611] my_driver_test[71345]: segfault at 3ec ip 00007f17f0682cd0 sp 00007ffe8efd4dc0 error 4 in libc-2.23.so[7f17f0634000+1c0000]
+Sep 16 22:13:47 cu-cs-vm kernel: [251399.890846] Releasing simple_character_device
+Sep 16 22:17:01 cu-cs-vm CRON[71361]: (root) CMD (   cd / && run-parts --report /etc/cron.hourly)
+Sep 16 22:18:42 cu-cs-vm kernel: [251695.020472] inside my_driver_exit function
+Sep 16 22:19:12 cu-cs-vm dhclient[60644]: DHCPREQUEST of 172.16.33.129 on ens33 to 172.16.33.254 port 67 (xid=0x36dba3da)
+Sep 16 22:19:12 cu-cs-vm dhclient[60644]: DHCPACK of 172.16.33.129 from 172.16.33.254
+Sep 16 22:19:12 cu-cs-vm NetworkManager[783]: <info>  [1600316352.9851]   address 172.16.33.129
+Sep 16 22:19:12 cu-cs-vm NetworkManager[783]: <info>  [1600316352.9881]   plen 24 (255.255.255.0)
+Sep 16 22:19:12 cu-cs-vm NetworkManager[783]: <info>  [1600316352.9881]   gateway 172.16.33.2
+Sep 16 22:19:12 cu-cs-vm NetworkManager[783]: <info>  [1600316352.9882]   server identifier 172.16.33.254
+Sep 16 22:19:12 cu-cs-vm NetworkManager[783]: <info>  [1600316352.9882]   lease time 1800
+Sep 16 22:19:12 cu-cs-vm NetworkManager[783]: <info>  [1600316352.9882]   nameserver '172.16.33.2'
+Sep 16 22:19:12 cu-cs-vm NetworkManager[783]: <info>  [1600316352.9882]   domain name 'localdomain'
+Sep 16 22:19:12 cu-cs-vm NetworkManager[783]: <info>  [1600316352.9882]   wins '172.16.33.2'
+Sep 16 22:19:12 cu-cs-vm dbus[770]: [system] Activating via systemd: service name='org.freedesktop.nm_dispatcher' unit='dbus-org.freedesktop.nm-dispatcher.service'
+Sep 16 22:19:12 cu-cs-vm NetworkManager[783]: <info>  [1600316352.9882] dhcp4 (ens33): state changed bound -> bound
+Sep 16 22:19:13 cu-cs-vm systemd[1]: Starting Network Manager Script Dispatcher Service...
+Sep 16 22:19:13 cu-cs-vm dhclient[60644]: bound to 172.16.33.129 -- renewal in 803 seconds.
+Sep 16 22:19:13 cu-cs-vm dbus[770]: [system] Successfully activated service 'org.freedesktop.nm_dispatcher'
+Sep 16 22:19:13 cu-cs-vm systemd[1]: Started Network Manager Script Dispatcher Service.
+Sep 16 22:19:13 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: new request (1 scripts)
+Sep 16 22:19:13 cu-cs-vm nm-dispatcher: req:1 'dhcp4-change' [ens33]: start running ordered scripts...
+Sep 16 22:19:22 cu-cs-vm kernel: [251734.834611] inside my_driver_init function
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432608] Opening simple_character_device
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432612] Device has been opened 1 times
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432663] Device has read 1024 bytes
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432674] Device has written 10 bytes
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432677] Device has read 1024 bytes
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432682] In llseek
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432683] SEEK_SET
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432684] SEEK_CUR
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432684] SEEK_END
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432685] llseek returning 1004
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432692] In llseek
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432694] SEEK_CUR
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432694] SEEK_END
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432695] llseek returning 1004
+Sep 16 22:20:05 cu-cs-vm kernel: [251777.432698] Releasing simple_character_device
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930776] Opening simple_character_device
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930779] Device has been opened 2 times
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930844] Device has read 1024 bytes
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930856] Device has written 10 bytes
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930859] Device has read 1024 bytes
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930862] In llseek
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930863] SEEK_CUR
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930863] SEEK_END
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930864] llseek returning 1004
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930867] In llseek
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930868] SEEK_END
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930868] llseek returning 1004
+Sep 16 22:25:10 cu-cs-vm kernel: [252082.930871] Releasing simple_character_device
+Sep 16 22:27:06 cu-cs-vm kernel: [252198.586183] inside my_driver_exit function
+Sep 16 22:27:21 cu-cs-vm kernel: [252213.351109] inside my_driver_init function
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537004] Opening simple_character_device
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537008] Device has been opened 1 times
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537089] Device has read 1024 bytes
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537101] Device has written 10 bytes
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537104] Device has read 1024 bytes
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537109] In llseek
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537110] SEEK_SET
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537111] llseek returning 20
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537118] In llseek
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537119] SEEK_CUR
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537120] llseek returning 40
+Sep 16 22:27:28 cu-cs-vm kernel: [252220.537124] Releasing simple_character_device
