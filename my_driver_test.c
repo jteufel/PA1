@@ -3,7 +3,7 @@
 
 #define BUFFER 1024
 
-static char kernal_buffer[buffer_length];
+static char kernal_buffer[BUFFER];
 
 
 int main()
@@ -13,12 +13,12 @@ int main()
 
 	printf("Now testing simple_character_device\n");
 
-  printf("First Testing Read\n");
+  	printf("First Testing Read\n");
 
-  read(my_device, kernal_buffer, BUFFER);
+  	read(my_device, kernal_buffer, BUFFER);
 
-  printf("Read output: %s\n", kernal_buffer);
+  	printf("Read output: %s\n", kernal_buffer);
 
-  return 0
+  	return 0;
 
 }
