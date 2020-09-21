@@ -1,8 +1,8 @@
-#include<linux/init.h>
-#include<linux/module.h>
-#include<linux/fs.h>
-#include<linux/uaccess.h>
-#include<linux/unistd.h>
+#include<linux/init.h> //from hello world
+#include<linux/module.h> //from hello world
+#include<linux/fs.h>//
+#include<linux/uaccess.h> //for copy to copy_from_user
+#include<linux/unistd.h> //needed for read and write calls and ll seek
 
 #define BUFFER 1024
 #define MAJOR 240
@@ -11,10 +11,43 @@ static char kernal_buffer[BUFFER];
 int open_count = 0;
 loff_t file_pointer_location;
 
+/*
+General notes:
+
+used MakeFile to compile driver code - makes my_driver.ko module file to be inserted
+
+sudo insmod - insert LKM kernal
+sudo rmmod - remove LKM from kernal
+lsmod - view LKM's in KERN_ALERT
+
+virtual files - a way for the kernal to know which driver to use with which device. Located in the /dev directory.
+
+sudo mknod <location> <type of driver> <major number> <minor number> - used to make a virtual file. Major number should be unique to the device.
+
+register chrdev - called when we inssert the LKM into the kernal, used to tell the kernal which device it will be supporting by passing in the major number
+
+ssize_t is an unsigned integer type used for byte measurments
+
+loff_t is type 'long offset' used for the offset pointer argument in the
+
+*/
+
+//
 
 ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset)
 {
+	/*
+	Reads count bytes from the device (kernal space) into the user space buffer.
 
+	Conditional checks to see the count is less then the buffer size.
+
+	Then is calls the copy_to_user which copies data from the kernel into user space.
+	It reads data from the kernal_buffer into the user space buffer (*buffer).
+
+	copy_to_user returns the number of bytes that were successfuly transferred,
+	but the function is supposed to return the number of byetes that weren't transferred successfuly
+
+	*/
 	int to_read;
 	int ctu;
 	int result;
@@ -24,8 +57,6 @@ ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset
 	else
 			to_read = BUFFER;
 
-	//copy_to_user
-	//The function returns zero on success or non-zero to indicate the number of bytes that weren't transferred.
 	ctu = copy_to_user(buffer, kernal_buffer, to_read);
 
 	result = to_read - ctu;
@@ -39,9 +70,24 @@ ssize_t my_read(struct file *my_file, char *buffer, size_t count, loff_t *offset
 ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t *offset)
 {
 
+	/*
+	writes count bytes from user spcae into the device (kernal space buffer).
+
+	Conditional checks to see the count is less then the buffer size.
+
+	Then is calls the copy_from_user which copies data from the kernel into user space.
+	It reads data from the kernal_buffer into the user space buffer (*buffer).
+
+	copy_to_user returns the number of bytes that were successfuly transferred,
+	but the function is supposed to return the number of byetes that weren't transferred successfuly
+
+	*/
+
 	int to_write;
 	int cfu;
 	int result;
+
+
 
 	if (BUFFER > count)
 			to_write = count;
@@ -49,7 +95,7 @@ ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t 
 			to_write = BUFFER;
 
 	//copy_from_user
-	//The function returns zero on success or non-zero to indicate the number of bytes that weren'ttransferred.
+	//The function returns zero on success or non-zero to indicate the number of bytes that weren't transferred.
 	cfu = copy_from_user(kernal_buffer, buffer, to_write);
 
 	result = to_write - cfu;
@@ -62,7 +108,7 @@ ssize_t my_write(struct file *my_file, const char *buffer, size_t count, loff_t 
 
 loff_t my_llseek(struct file *my_file, loff_t offset, int whence)
 {
-	
+
 	printk(KERN_ALERT "In llseek\n");
 	switch (whence) {
 		case SEEK_SET:
@@ -79,7 +125,7 @@ loff_t my_llseek(struct file *my_file, loff_t offset, int whence)
 			break;
 
 	};
-	
+
 	printk(KERN_ALERT "llseek returning %d",file_pointer_location);
 	return file_pointer_location;
 };
@@ -100,7 +146,6 @@ int my_open(struct inode *pinode, struct file *my_file)
 
 int my_release(struct inode *pinode, struct file *my_file)
 {
-	//int release_count;
 	printk(KERN_ALERT "Releasing simple_character_device\n");
 
 	return 0;

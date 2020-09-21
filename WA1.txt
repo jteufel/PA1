@@ -1,0 +1,9 @@
+1.
+2.
+3.
+4.
+5.
+
+6.  - Starts up with the initial bootstrap program (stored in firmware).
+    - Bootstrap program initializes everything (registers, Dev C's, Memory).
+    - Loads the OS by locating and loading the OS kernel into Memory.

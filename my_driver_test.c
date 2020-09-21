@@ -22,7 +22,7 @@ printf("Read again\n");
 read(my_device, kernal_buffer, BUFFER);
 printf("Read output: %s\n", kernal_buffer);
 
-loff_t seek_off = 20;
+loff_t seek_off = 4;
 
 printf("Testing llseek with SEEK_SET\n");
 loff_t set = llseek(my_device, seek_off, 0);
@@ -32,7 +32,7 @@ printf("Testing llseek with SEEK_CUR\n");
 loff_t cur = llseek(my_device, seek_off, 1);
 printf("llseek output: %d\n", cur);
 
-close(my_device);
+release(my_device);
 
 return 0;
 }
